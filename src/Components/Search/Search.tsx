@@ -4,18 +4,23 @@ import React, { ChangeEvent, useState, MouseEvent, SyntheticEvent } from 'react'
 interface Props {
   // onClick func take e param and return void
   // Really like at TTA
-  onClick: (e: SyntheticEvent) => void
+  onSearchSubmit: (e: SyntheticEvent) => void
   search: string | undefined
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void
+  handleSearchChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 // setup prop to pass them down : Pass function and pass value
-const Search : React.FC<Props> = ({onClick, search, handleChange}: Props) : JSX.Element => {
+const Search : React.FC<Props> = ({onSearchSubmit, search, handleSearchChange}: Props) : JSX.Element => {
   return (
-    <div>
-    <input type="text" value={search} onChange={(e) => handleChange(e)} />
-    <button onClick={(e) => onClick(e)} />
-    </div>
+    // <div>
+    // <input type="text" value={search} onChange={(e) => handleChange(e)} />
+    // <button onClick={(e) => onClick(e)} />
+    // </div>
+    <>
+    <form onSubmit={onSearchSubmit}>
+      <input value={search} onChange={handleSearchChange} />
+    </form>
+    </>
   )
 }
 
