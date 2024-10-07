@@ -42,12 +42,23 @@ function App() {
     }
    }
 
+   // Make logic handle item in here, directly handle with array main data
+   const onPortDelete = (e: any) => {
+    // difficult to think out type so use any type
+    e.preventDefault();
+    // make new array without value import to
+    const removed = portfolioValues.filter((value) => {
+      return value !== e.target[0].value;
+    });
+    setPortfolioValues(removed);
+   }
+
   return (
     <div className="App">
     <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange}/>
     {/* Import component in to APP */}
     {/* Pass data portfolio value in to Component ListPortfolio */}
-    <ListPortfolio portfolioValues={portfolioValues} />
+    <ListPortfolio portfolioValues={portfolioValues} onPortfolioDelete={onPortDelete} />
     <CardList searchResults={searchResult} onPortfolioCreate={onPortfolioCreate}/>
     {serverError && <h1>{serverError}</h1>}
     </div>
