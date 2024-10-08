@@ -2,11 +2,17 @@ import React, { SyntheticEvent } from 'react'
 
 interface Props {
     onPortfolioDelete: (e: SyntheticEvent) => void;
+    portfolioValue: string;
 }
 
-const DeletePortfolio = ({onPortfolioDelete}: Props) => {
+const DeletePortfolio = ({onPortfolioDelete, portfolioValue}: Props) => {
   return (
-    <div>DeletePortfolio</div> //STOP 6:24
+    <div>
+      <form onSubmit={onPortfolioDelete}>
+        <input hidden={true} value={portfolioValue} />
+        <button>X</button>
+      </form>
+    </div>
   )
 }
 
