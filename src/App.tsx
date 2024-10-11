@@ -55,17 +55,6 @@ function App() {
     setPortfolioValues(removed);
    }
 
-  return (
-    <div className="App">
-    <Navbar />
-    {/* <Hero /> */}
-    <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange}/>
-    {/* Import component in to APP */}
-    {/* Pass data portfolio value in to Component ListPortfolio */}
-    <ListPortfolio portfolioValues={portfolioValues} onPortfolioDelete={onPortDelete} />
-    <CardList searchResults={searchResult} onPortfolioCreate={onPortfolioCreate}/>
-    {serverError && <h1>{serverError}</h1>}
-    </div>
-  );
+  return <></>
 } 
 export default App;
