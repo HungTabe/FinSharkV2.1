@@ -49,6 +49,7 @@ const SearchPage = (props: Props) => {
 
   // Make logic handle item in here, directly handle with array main data
   const onPortDelete = (e: any) => {
+
     // difficult to think out type so use any type
     e.preventDefault();
     // make new array without value import to
