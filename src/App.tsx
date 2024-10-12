@@ -1,14 +1,6 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import CardList from './Components/CartList/CardList';
-import Search from './Components/Search/Search';
-import { CompanySearch } from './company';
-import { searchCompanies } from './api';
-import { setServers } from 'dns';
-import ListPortfolio from './Components/Portfolio/ListPortfolio/ListPortfolio';
-import Navbar from './Components/Navbar/Navbar';
-import Hero from './Components/Hero/Hero';
+import { Outlet } from "react-router";
+import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   const [search, setSearch] = useState<string>("")

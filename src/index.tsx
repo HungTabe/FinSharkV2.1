@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Search from './Components/Search/Search';
+import {searchCompanies} from './api'
 import { RouterProvider } from 'react-router-dom';
 import { router } from './Routes/Router';
 
@@ -12,7 +14,7 @@ const root = ReactDOM.createRoot(
 // console.log(searchCompanies('tsla'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

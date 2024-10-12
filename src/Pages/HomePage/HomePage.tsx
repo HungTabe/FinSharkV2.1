@@ -1,10 +1,13 @@
 import React from 'react'
+import Hero from '../../Components/Hero/Hero'
 
-type Props = {}
+interface Props {}
 
 const HomePage = (props: Props) => {
   return (
-    <div>HomePage</div>
+    <>
+        <Hero/>
+    </>
   )
 }
 
