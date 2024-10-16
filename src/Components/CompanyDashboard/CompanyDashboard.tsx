@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Children } from 'react'
 import { Outlet } from 'react-router-dom'
 
-type Props = {}
+type Props = {
+  children: React.ReactNode;
+}
 
-const CompanyDashboard = (props: Props) => {
+const CompanyDashboard = ({children}: Props) => {
   return (
     <div className="relative md:ml-64 bg-blueGray-100 w-full">
 
@@ -13,7 +15,7 @@ const CompanyDashboard = (props: Props) => {
 
                 <div>
                  <div className="flex flex-wrap">
-                  {/* {<Outlet />} Pause at 13:41 */}
+                  {children}
                   </div>
                   <div className="flex flex-wrap">
                   {<Outlet />}
