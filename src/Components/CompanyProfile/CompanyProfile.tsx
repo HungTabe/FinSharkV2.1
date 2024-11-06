@@ -96,6 +96,7 @@ const CompanyProfile = (props: Props) => {
     const getCompanyKeyRatios = async () => {
       const value = await getKeyMetrics(ticker);
       setCompanyData(value?.data[0]);
+      console.log('Value Data : ', value?.data[0]) // havadata
     };
     getCompanyKeyRatios();
   }, []);
@@ -109,7 +110,7 @@ const CompanyProfile = (props: Props) => {
       */}
       {companyData ? (
         <>
-          <RatioList config={tableConfig} data={companyData} />l
+          <RatioList config={tableConfig} data={companyData} />
         </>
       ) : (
         <>Loading...</>

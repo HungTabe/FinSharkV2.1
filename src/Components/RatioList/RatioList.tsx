@@ -4,7 +4,7 @@ type Props = {
 };
 
 const RatioList = ({ config, data }: Props) => {
-  const renderedCells = config.map((row: any) => {
+  const renderedCells = config?.map((row: any) => {
     return (
       <li className="py-6 sm:py-6">
         <div className="flex items-center space-x-4">
