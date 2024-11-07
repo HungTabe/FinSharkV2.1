@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CompanyKeyMetrics, CompanyProfile, CompanySearch } from "./company.js";
+import { CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch } from "./company.js";
 
 interface SearchResponse {
     data: CompanySearch[];
@@ -40,6 +40,19 @@ export const getKeyMetrics = async (query: string) => {
         const data = await axios.get<CompanyKeyMetrics[]>(
             `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${query}?apikey=${process.env.REACT_APP_API_KEY}`
         );
+        return data;
+    } catch (error: any) {
+        console.log("error message from API: ", error.message);
+    }
+}
+
+// ChangeType/AndQuery
+export const getIncomeStatement = async (query: string) => {
+    try {
+        const data = await axios.get<CompanyIncomeStatement[]>(
+            `https://financialmodelingprep.com/api/v3/income-statement/${query}?limit=40&apikey=${process.env.REACT_APP_API_KEY}`
+        );
+        // Remember: Set limit on query of you don't wont get 100+ data back
         return data;
     } catch (error: any) {
         console.log("error message from API: ", error.message);
