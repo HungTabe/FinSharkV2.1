@@ -1,0 +1,7 @@
+https://www.youtube.com/watch?v=zz2FWxXvO2k&list=PL82C6-O4XrHcNJd4ejg8pX5fZaIDZmXyn&index=22
+
+Step : 
+1-Get incomstatement Data by call API
+ - Create api call function and remember change data type on get api and limit to get enough data not adundant
+
+ Stop at income statement 6p20
