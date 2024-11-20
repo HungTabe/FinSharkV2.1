@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { CompanyIncomeStatement } from '../../company';
 import { useOutletContext } from 'react-router';
 import { getIncomeStatement } from '../../api';
+import { isDOMComponent } from 'react-dom/test-utils';
+import Table from '../Table/Table';
 
 type Props = {}
 
@@ -77,7 +79,15 @@ const IncomeStatement = (props: Props) => {
     };
     incomeStatementFetch();
   }, [])
-  return <>IncomeStatement</>
+  return <>
+  {incomeStatement ? (
+    <>
+    <Table config={configs} data={incomeStatement} />
+    </>
+  ) : (
+  <>Loading...</>
+  )}
+  </>
 }
 
 export default IncomeStatement

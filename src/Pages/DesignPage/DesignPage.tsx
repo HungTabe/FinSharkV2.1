@@ -20,7 +20,7 @@ const DesignPage = (props: Props) => {
     <h1>Finshark Design Page</h1>
     <h2>This is finshark design page. This place will hold design</h2>
     <RatioList data={TestDataCompany} config={tableConfig} />
-    <Table/>
+    <Table data={testIncomeStatementData} config={tableConfig}/>
     </>
 )
 }
